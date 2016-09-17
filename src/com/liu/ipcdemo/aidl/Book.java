@@ -7,6 +7,11 @@ import android.os.Parcelable;
 
 public class Book implements Parcelable,Serializable {
 	
+	/**
+	 * @Fields serialVersionUID : TODO(用一句话描述这个变量表示什么)
+	 */
+	
+	private static final long serialVersionUID = 492030337291339100L;
 	public int bookId;
 	public String bookName;
 	

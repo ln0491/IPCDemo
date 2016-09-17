@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.liu.ipcdemo.aidl.Book;
 import com.liu.ipcdemo.aidl.IBookManager;
+import com.liu.ipcdemo.message.MessengerActivity;
 import com.liu.ipcdemo.service.BookManagerService;
 
 import android.app.Activity;
@@ -30,13 +31,17 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
+		//toBindService();
+		
+	}
+
+	private void toBindService() {
 		Intent service = new Intent(this,BookManagerService.class);
 		
 		if(mMyServiceConnection==null){
 			mMyServiceConnection = new MyServiceConnection();
 		}
 		bindService(service, mMyServiceConnection, Context.BIND_AUTO_CREATE);
-		
 	}
 	
 	private DeathRecipient mDeathRecipient = new DeathRecipient() {
@@ -136,4 +141,11 @@ public class MainActivity extends Activity {
 		 Intent intent = new Intent(this,SecondActivity.class);
 		 startActivity(intent);
 	 }
+	 public void startMessenger(View view){
+		 Intent intent = new Intent(this,MessengerActivity.class);
+		 startActivity(intent);
+	 }
+	 
+	 
+	 
 }

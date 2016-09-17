@@ -7,8 +7,9 @@
     <uses-sdk
         android:minSdkVersion="15"
         android:targetSdkVersion="22" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -24,10 +25,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <service android:name=".service.BookManagerService" >
-        </service>
-
         <activity
             android:name=".FirstActivity"
             android:label="@string/title_activity_first" >
@@ -35,6 +32,20 @@
         <activity
             android:name=".SecondActivity"
             android:label="@string/title_activity_second" >
+        </activity>
+
+        <service android:name=".service.BookManagerService" >
+        </service>
+
+        <!-- 服务 开启一个进程 -->
+        <service
+            android:name="com.liu.ipcdemo.message.MessengerService"
+            android:process=":remote" >
+        </service>
+
+        <activity
+            android:name="com.liu.ipcdemo.message.MessengerActivity"
+            android:label="@string/title_activity_messenger" >
         </activity>
     </application>
 

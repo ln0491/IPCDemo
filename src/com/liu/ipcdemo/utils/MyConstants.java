@@ -7,6 +7,15 @@ import android.os.Environment;
 
 public class MyConstants {
 	/**
+	 * 客户端
+	 */
+	public static final int MSG_FROM_CLIENT = 0;
+	/**
+	 * 服务端
+	 */
+	public static final int MSG_FROM_SERVICE = 1;
+	
+	/**
 	 * 目录
 	 */
 	public static final String USER_SER_DIR = Environment.getExternalStorageDirectory().getPath()
